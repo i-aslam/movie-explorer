@@ -1,0 +1,218 @@
+/* base page settings */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e2f;   /* deep blue-gray with a beige combo */
+  color: #fff;
+  margin: 0;
+  padding: 2rem;
+}
+
+/* center content and limit width */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+/* home page description text */
+#home-description {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 4px;
+}
+
+/* specific width and centering for year input */
+#year-input {
+  width: 120px;
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+/* autocomplete dropdown container */
+#suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #2a003f;
+  border: 1px solid #444;
+  border-top: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+/* each suggestion item */
+#suggestions li {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* hover effect for suggestion item */
+#suggestions li:hover {
+  background: #3b004f;
+}
+
+/* button styles */
+button[type="submit"],
+#pagination-controls button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  background-color: #f5f5dc;  
+  color: #1e1e2f;             
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* hover effect for all buttons */
+button:hover {
+  background-color: #d3d3b6;  
+}
+
+/* results grid layout */
+#results {
+  display: grid;
+  grid-template-columns: 1fr; /* single column  */
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* movie card appearance */
+.card {
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.2s;
+}
+
+/* card hover grow effect */
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* image styling inside card */
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* card title spacing */
+.card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+/* pagination buttons center */
+#pagination-controls button {
+  display: block;       
+  margin: 0.5rem auto;  
+}
+
+
+/* styles for wider screens */
+
+@media (min-width: 600px) {
+  /* switch form to row layout */
+  form {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 600px) {
+      /* movie search bar a bit smaller */
+      .search-wrapper {
+        flex: 1;        
+        min-width: 0;
+        margin: 0;
+      }
+    
+      /* year input is abit wider */
+      #year-input {
+        width: 160px;           
+        padding: 0.75rem 1rem;
+        font-size: 1.125rem;
+        border: none;
+        border-radius: 4px;
+        margin-left: 1.5rem;
+      }
+    }      
+    
+/* submit button size to its content */
+  button[type="submit"] {
+    width: auto;
+    margin: 0;
+  }
+  
+  /* multi column grid for results */
+  #results {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 0;
+  }
+
+  .container {
+    padding: 0;
+  }
+}
+
+.action-button {
+  background-color: #f5f5dc;   
+  color: #1e1e2f;              
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0.5rem auto;         
+  display: block;              
+  width: 100%;
+  max-width: 300px;            
+  text-align: center;
+}
+
+.action-button:hover {
+  background-color: #d3d3b6;   
+}

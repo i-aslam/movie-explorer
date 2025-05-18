@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Mohammad Aslam">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Movie Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- main container for the app -->
+  <div class="container">
+    <!-- clickable title resets home view -->
+    <h1 id="home-title">Movie Explorer</h1>
+
+    <!-- brief intro shown on home page -->
+    <p id="home-description">
+      welcome to movie explorer<br>
+      search by title to view posters, ratings, genre and more<br>
+      (optional to search with the year of release)<br>
+      click on Details for a movie to show the full information
+    </p>
+
+    <!-- search form with suggestions list -->
+    <form id="search-form">
+      <div class="search-wrapper">
+        <!-- user input for movie title -->
+        <input
+          type="text"
+          id="search-input"
+          placeholder="search movies..."
+          autocomplete="off"
+          required
+        >
+        <!-- autocomplete results -->
+        <ul id="suggestions"></ul>
+      </div>
+
+      <!-- optional year filter -->
+      <input
+        type="number"
+        id="year-input"
+        placeholder="year (optional)"
+        min="1900"
+        max="2025"
+      >
+
+      <!-- submit search -->
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- container for movie results -->
+    <div id="results"></div>
+
+    <!-- controls for pagination -->
+    <div id="pagination-controls" style="text-align:center;margin-top:20px"></div>
+  </div>
+
+  <!-- main application script -->
+  <script src="app.js"></script>
+</body>
+</html>
